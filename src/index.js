@@ -35,7 +35,7 @@ app.set('view engine', 'hbs');
 
 // gọi Router đến các trang cần đến vvvvvv
 route(app);
-
+route(app);
 app.listen(port, () => {
     console.log(`Example app listening on port http://localhost:${port}`);
 });
