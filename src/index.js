@@ -22,18 +22,18 @@ app.use(
 // //HTTP logger
 app.use(morgan('combined'));
 
-                                //Template engine
+                                       //Template engine
                                 app.engine(
-                                    'hbs',
+                                           'hbs',
     engine({
         extname: 'hbs',
     }),
 );
 app.set('view engine', 'hbs');
-                // Tạo __dirname
-                app.set('views', path.join(path.join(__dirname, 'resources/views')));
+                        // Tạo __dirname
+                     app.set('views', path.join(path.join(__dirname, 'resources/views')));
 
-// gọi Router đến các trang cần đến
+// gọi Router đến các trang cần đến vvvvvv
 route(app);
 
 app.listen(port, () => {
