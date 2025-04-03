@@ -49,3 +49,17 @@ POST: nó sẽ gửi đi (submit) dưới dạng Form Data
 
 Về mô hình MVC thfi trang Home, search, contact (Những trang độc lập)
 => site.js vs site.controller
+
+Thư viện giúp fomat Code đẹp hơn là 
+  prettier (npm i prettier) có docs
+    Cách sử dụng:
+      Nếu sử dụng mỗi prettier thì chỉ cần thêm dòng dưới vào package.json
+      "beautiful": "prettier --single-quote --trailing-comma all --tab-width 4 --write 'src/**/*.{js,json,scss}"
+      và npm run beautiful
+  
+  Nếu dùng kết hợp lint-staged và husky để fomat code lên git
+    lint-staged: npm i lint-staged
+      Kiểm tra lỗi cú pháp, coding style trước khi commit, tránh việc push code lỗi lên repository.
+      Tiết kiệm thời gian vì chỉ kiểm tra những tệp đã thay đổi (staged), không cần kiểm tra toàn bộ project.
+      Cách sử dụng: 
+      

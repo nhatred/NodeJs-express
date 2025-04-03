@@ -6,6 +6,5 @@ function route(app) {
 
     // những cái chuyển đến trang gốc luôn luôn để ở dưới cùng
     app.use('/', siteRouter);
-        
 }
 module.exports = route;

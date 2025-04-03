@@ -22,16 +22,16 @@ app.use(express.json());
 // //HTTP logger
 app.use(morgan('combined'));
 
-//Template engine
-app.engine(
-    'hbs',
+                                //Template engine
+                                app.engine(
+                                    'hbs',
     engine({
         extname: 'hbs',
     }),
 );
 app.set('view engine', 'hbs');
-// Tạo __dirname
-app.set('views', path.join(path.join(__dirname, 'resources/views')));
+                // Tạo __dirname
+                app.set('views', path.join(path.join(__dirname, 'resources/views')));
 
 // gọi Router đến các trang cần đến
 route(app);
