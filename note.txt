@@ -1,0 +1,51 @@
+NODEMON: => giúp tự động reload lại trang 
+
+Basic routing
+app.get('/', (req, res) => {
+    res.render('home');
+  })
+app.get('/news', (req, res) => {
+  res.render('news');
+})
+
+là định hướng tuyến đường trong wepside của bạn
+trong phương thức get đó thì req: request gửi yêu cầu của
+người dùng lên server và res:response và kết quả trả về của 
+trình duyệt
+
+
+CÁC PHƯƠNG THỨC CỦA TRÌNH DUYỆT
+
+GET: gửi đi bằng một Query parameters đính trên url của trình duyệt 
+  Query parameters luôn bắt đầu sau dấu ? trong URL và bao gồm các cặp key=value. 
+  Nếu có nhiều tham số, chúng được ngăn cách bằng dấu &.
+    Ví dụ: https://example.com/search?query=laptop&category=electronics&page=2
+    Trong đó:
+    query=laptop → Tìm kiếm từ khóa "laptop".
+    category=electronics → Lọc kết quả theo danh mục "electronics".
+    page=2 → Chỉ định trang số 2 của kết quả.
+  Cách lấy biến sử dụng
+    app.get('/', (req, res) => {
+      console.log(req.query.(category, page, query ...))
+      res.render('home');
+    })
+
+POST: nó sẽ gửi đi (submit) dưới dạng Form Data
+  Form Data: nằm ở phần Payload
+  Cách lấy biến sử dụng:
+    // cách để sử dụng được req.body
+    => dưới đó là đnag sử dụng thư viện của body-parser mà express đã tích hợp sẵn
+       mà ta không cần cài
+    app.use(express.urlencoded({
+      extended: true
+    }))
+    app.use(express.json())
+
+    app.post('/search', (req, res) => {
+      console.log(req.body.(giá trị cần lấy))
+      res.send();
+    })
+
+
+Về mô hình MVC thfi trang Home, search, contact (Những trang độc lập)
+=> site.js vs site.controller
